@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-deezer
+    ports:
+      - "1522:1521"  # Cambiamos el puerto local a 1522
+    environment:
+      ORACLE_DATABASE: deezer
+      ORACLE_PASSWORD: admin123
+      APP_USER: deezer_user
+      APP_USER_PASSWORD: user123
+    volumes:
+      - ../database/deezer_schema_ddl.sql:/container-entrypoint-initdb.d/deezer_schema_ddl.sql
+      - oracle_data:/opt/oracle/oradata
+
+volumes:
+  oracle_data:
