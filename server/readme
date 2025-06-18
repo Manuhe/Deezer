@@ -1,0 +1,28 @@
+---
+
+## Backend: Express
+
+Ubicación: [`server/`](server/)
+
+### Principales tecnologías y dependencias
+
+- **express**: Framework principal para la API REST.
+- **oracledb**: Conector para base de datos Oracle.
+- **dotenv**: Variables de entorno.
+- **multer**: Subida de archivos (audio).
+- **helmet**: Seguridad HTTP.
+- **cors**: Permitir peticiones desde el frontend.
+- **morgan**: Logger de peticiones HTTP.
+- **qs**: Parseo avanzado de queries.
+- **module-alias**: Alias de rutas internas.
+
+#### Dependencias de desarrollo
+
+- **nodemon**: Recarga automática en desarrollo.
+
+### Instalación
+
+```sh
+cd server
+npm install
+```
