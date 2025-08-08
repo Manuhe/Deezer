@@ -22,10 +22,10 @@ function pluralize(word) {
 }
 
 const loadRoutes = async () => {
-  let controller = {};
   const entities = await fs.readdir(apiPath);
 
   for (const entity of entities) {
+    let controller = {}; // ← Mover aquí para evitar contaminación entre entidades
     const entityPath = path.join(apiPath, entity);
     const routesPath = path.join(entityPath, "routes");
     const controllersPath = path.join(entityPath, "controllers");
