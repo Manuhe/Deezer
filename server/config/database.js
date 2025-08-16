@@ -28,7 +28,11 @@ export async function query(sql, binds = {}, options = {}) {
     if (!connection) {
       throw new Error("Oracle connection not initialized");
     }
-
+    // Forzar autoCommit en operaciones de escritura si no está especificado
+    const isWrite = /^\s*(insert|update|delete)/i.test(sql);
+    if (isWrite && options.autoCommit === undefined) {
+      options.autoCommit = true;
+    }
     const result = await connection.execute(sql, binds, options);
     return result;
   } catch (err) {

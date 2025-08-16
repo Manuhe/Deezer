@@ -1,0 +1,27 @@
+# Proyecto Express + Vue 3
+
+Este proyecto es una aplicación web con un backend en **Express** y un frontend en **Vue 3**.
+
+## Dependencias principales
+
+- **Backend (Express):**
+
+  - express
+  - oracledb
+  - dotenv
+  - multer
+  - helmet
+  - cors
+  - morgan
+
+- **Frontend (Vue 3):**
+  - vue
+  - vue-router
+  - axios
+
+## Instalación
+
+1. Instala las dependencias del backend:
+   ```sh
+   npm install
+   ```

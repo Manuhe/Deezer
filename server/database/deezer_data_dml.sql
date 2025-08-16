@@ -1,34 +1,33 @@
 -- ============================
--- SAMPLE DATA
--- FILE: deezer_data_dml.sql
+-- SAMPLE DATA CORREGIDO
 -- ============================
 
--- USERS
-INSERT INTO users (username, email, password_hash) VALUES ('orson', 'orson@example.com', 'hash123');
-INSERT INTO users (username, email, password_hash) VALUES ('luna', 'luna@example.com', 'hash456');
+-- USERS (insertando ids explícitos)
+INSERT INTO users (id, username, email, password_hash) VALUES (1, 'orson', 'orson@example.com', 'hash123');
+INSERT INTO users (id, username, email, password_hash) VALUES (2, 'luna', 'luna@example.com', 'hash456');
 
 -- ARTISTS
-INSERT INTO artists (name, bio, country) VALUES ('The Weekend', 'Artista canadiense...', 'Canada');
-INSERT INTO artists (name, bio, country) VALUES ('Dua Lipa', 'Pop star from UK...', 'UK');
+INSERT INTO artists (id, name, bio, country) VALUES (1, 'The Weekend', 'Artista canadiense...', 'Canada');
+INSERT INTO artists (id, name, bio, country) VALUES (2, 'Dua Lipa', 'Pop star from UK...', 'UK');
 
 -- ALBUMS
-INSERT INTO albums (artist_id, title, release_date, cover_url) VALUES (1, 'After Hours', DATE '2020-03-20', 'https://example.com/cover1.jpg');
-INSERT INTO albums (artist_id, title, release_date, cover_url) VALUES (2, 'Future Nostalgia', DATE '2020-03-27', 'https://example.com/cover2.jpg');
+INSERT INTO albums (id, artist_id, title, release_date, cover_url) VALUES (1, 1, 'After Hours', DATE '2020-03-20', 'https://example.com/cover1.jpg');
+INSERT INTO albums (id, artist_id, title, release_date, cover_url) VALUES (2, 2, 'Future Nostalgia', DATE '2020-03-27', 'https://example.com/cover2.jpg');
 
 -- TRACKS
-INSERT INTO tracks (album_id, title, duration, audio_url) VALUES (1, 'Blinding Lights', 200, 'https://example.com/audio1.mp3');
-INSERT INTO tracks (album_id, title, duration, audio_url) VALUES (2, 'Levitating', 203, 'https://example.com/audio2.mp3');
+INSERT INTO tracks (id, album_id, title, duration, audio_url) VALUES (1, 1, 'Blinding Lights', 200, 'https://example.com/audio1.mp3');
+INSERT INTO tracks (id, album_id, title, duration, audio_url) VALUES (2, 2, 'Levitating', 203, 'https://example.com/audio2.mp3');
 
 -- GENRES
-INSERT INTO genres (name) VALUES ('Pop');
-INSERT INTO genres (name) VALUES ('R&B');
+INSERT INTO genres (id, name) VALUES (1, 'Pop');
+INSERT INTO genres (id, name) VALUES (2, 'R&B');
 
 -- TRACK_GENRES
 INSERT INTO track_genres (track_id, genre_id) VALUES (1, 2);
 INSERT INTO track_genres (track_id, genre_id) VALUES (2, 1);
 
 -- PLAYLISTS
-INSERT INTO playlists (user_id, name) VALUES (1, 'Orson Favorites');
+INSERT INTO playlists (id, user_id, name) VALUES (1, 1, 'Orson Favorites');
 
 -- PLAYLIST_TRACKS
 INSERT INTO playlist_tracks (playlist_id, track_id, position) VALUES (1, 1, 1);

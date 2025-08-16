@@ -5,5 +5,7 @@ export default [
     path: "/upload",
     handler: "library.upload",
     middleware: [uploader({ fieldName: "file" })],
+
+    
   },
 ];
